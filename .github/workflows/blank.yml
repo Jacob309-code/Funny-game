@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>This is a brief description about me or the website.</p>
+        </section>
+        <section id="services">
+            <h2>Services</h2>
+            <p>Details about the services offered.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Contact information or a form can go here.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#game">Funny Game</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>This is a brief description about me or the website.</p>
+        </section>
+        <section id="services">
+            <h2>Services</h2>
+            <p>Details about the services offered.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Contact information or a form can go here.</p>
+        </section>
+        <section id="game">
+            <h2>Funny Game</h2>
+            <p>Click the button if you can!</p>
+            <button id="funnyButton">Click Me!</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Funny Website. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html#funnyButton {
+    position: absolute;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#funnyButton:hover {
+    background-color: #e64a19;
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("funnyButton");
+
+    button.addEventListener("mouseover", () => {
+        const x = Math.random() * (window.innerWidth - button.offsetWidth);
+        const y = Math.random() * (window.innerHeight - button.offsetHeight);
+        button.style.left = `${x}px`;
+        button.style.top = `${y}px`;
+    });
+
+    button.addEventListener("click", () => {
+        alert("You got me! Well done!");
+    });
+});<section id="game1">
+    <h2>Funny Game 1: Click the Button</h2>
+    <p>Click the button if you can!</p>
+    <button id="funnyButton1">Click Me!</button>
+</section>
+
+<section id="game2">
+    <h2>Funny Game 2: Guess the Number</h2>
+    <p>Guess a number between 1 and 10!</p>
+    <input type="number" id="guessInput" placeholder="Enter your guess">
+    <button id="guessButton">Submit</button>
+    <p id="guessResult"></p>
+</section>
+
+<section id="game3">
+    <h2>Funny Game 3: Color Changer</h2>
+    <p>Click the button to change the background color!</p>
+    <button id="colorButton">Change Color</button>
+</section>#funnyButton1, #guessButton, #colorButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#funnyButton1:hover, #guessButton:hover, #colorButton:hover {
+    background-color: #388e3c;
+}
+
+#guessInput {
+    padding: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}document.addEventListener("DOMContentLoaded", () => {
+    // Game 1: Click the Button
+    const funnyButton1 = document.getElementById("funnyButton1");
+    funnyButton1.addEventListener("mouseover", () => {
+        const x = Math.random() * (window.innerWidth - funnyButton1.offsetWidth);
+        const y = Math.random() * (window.innerHeight - funnyButton1.offsetHeight);
+        funnyButton1.style.position = "absolute";
+        funnyButton1.style.left = `${x}px`;
+        funnyButton1.style.top = `${y}px`;
+    });
+    funnyButton1.addEventListener("click", () => {
+        alert("You got me! Well done!");
+    });
+
+    // Game 2: Guess the Number
+    const randomNumber = Math.floor(Math.random() * 10) + 1;
+    const guessButton = document.getElementById("guessButton");
+    const guessInput = document.getElementById("guessInput");
+    const guessResult = document.getElementById("guessResult");
+
+    guessButton.addEventListener("click", () => {
+        const userGuess = parseInt(guessInput.value);
+        if (userGuess === randomNumber) {
+            guessResult.textContent = "Correct! You guessed the number!";
+            guessResult.style.color = "green";
+        } else {
+            guessResult.textContent = "Wrong! Try again.";
+            guessResult.style.color = "red";
+        }
+    });
+
+    // Game 3: Color Changer
+    const colorButton = document.getElementById("colorButton");
+    colorButton.addEventListener("click", () => {
+        const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+        document.body.style.backgroundColor = randomColor;
+    });
+});
